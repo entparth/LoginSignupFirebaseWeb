@@ -12,6 +12,8 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
+import { SignUpPage } from '../pages/sign-up/sign-up';
+import { FirebaseProvider } from '../providers/firebase/firebase';
 @NgModule({
   declarations: [
     MyApp,
@@ -19,7 +21,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ContactPage,
     HomePage,
     TabsPage,
-    LoginSignupPage
+    LoginSignupPage,
+    SignUpPage,
   ],
   imports: [
     BrowserModule,
@@ -32,12 +35,14 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ContactPage,
     HomePage,
     TabsPage,
-    LoginSignupPage
+    LoginSignupPage,
+    SignUpPage,
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    FirebaseProvider
   ]
 })
 export class AppModule {}
