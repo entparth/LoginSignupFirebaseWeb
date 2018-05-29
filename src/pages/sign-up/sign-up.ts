@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { FormBuilder, Validators } from '@angular/forms';
+import { FirebaseProvider } from '../../providers/firebase/firebase';
 
 /**
  * Generated class for the SignUpPage page.
@@ -19,7 +20,7 @@ export class SignUpPage {
   user: { email?: any, firstName?:any, lastName?:any  } = {}
   public loginForm;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public FormBuilder:FormBuilder) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public FormBuilder:FormBuilder, public fireData: FirebaseProvider) {
     this.initializeForm();
     
   }
@@ -33,12 +34,16 @@ export class SignUpPage {
       name: ['', Validators.compose([Validators.required])],
       LastName: ['', Validators.compose([Validators.required])],
       secondName: ['', Validators.compose([Validators.required])],
+      email: ['', Validators.compose([Validators.required])],
+      password: ['', Validators.compose([Validators.required])],
     })
 
     console.log('values from the form', this.loginForm)
   }
 
   signupUser(){
+    this.fireData.signUpUser(this.loginForm.value.email, this.loginForm.value.password)
+
 
   }
 }

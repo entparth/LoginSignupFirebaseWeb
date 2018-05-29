@@ -15,7 +15,7 @@
 
 <ion-content padding>
 
-  <form [formGroup]="loginForm" (submit)="loginUser()" novalidate>
+  <form [formGroup]="loginForm" (submit)="signupUser()" novalidate>
     <ion-item>
       <ion-label floating>Email</ion-label>
       <ion-input #email formControlName="email" [(ngModel)]="user.email" type="email"></ion-input>
@@ -24,12 +24,17 @@
   
     <ion-item>
       <ion-label floating>First Name</ion-label>
-      <ion-input #password formControlName="firstname" [(ngModel)]="user.firstname" type="text"></ion-input>
+      <ion-input #password formControlName="firstName" [(ngModel)]="user.firstName" type="text"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label floating>Second Name</ion-label>
-      <ion-input #password formControlName="secondname" [(ngModel)]="user.secondname" type="text"></ion-input>
+      <ion-input #password formControlName="secondName" [(ngModel)]="user.secondName" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Second Name</ion-label>
+      <ion-input #password formControlName="secondName" [(ngModel)]="user.secondName" type="text"></ion-input>
     </ion-item>
     
   
