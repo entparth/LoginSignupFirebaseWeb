@@ -14,6 +14,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { SignUpPage } from '../pages/sign-up/sign-up';
 import { FirebaseProvider } from '../providers/firebase/firebase';
+import { GlobalsProvider } from '../providers/globals/globals';
 @NgModule({
   declarations: [
     MyApp,
@@ -42,7 +43,8 @@ import { FirebaseProvider } from '../providers/firebase/firebase';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    FirebaseProvider
+    FirebaseProvider,
+    GlobalsProvider
   ]
 })
 export class AppModule {}
